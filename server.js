@@ -4,19 +4,20 @@ var Promise = require('promise');
 var mongoose = require('mongoose');
 var Room = require('./roomController');
 
+// Connection Strings to MongoDB Instance
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.mongo);
+mongoose.connect(process.env.mongo).then((err) =>{
+  if(err)
+    console.error(err);
+});
 
-//
-// ## SimpleServer `SimpleServer(obj)`
-//
-// Creates a new instance of SimpleServer with the following options:
-//  * `port` - The HTTP port to listen on. If `process.env.PORT` is set, _it overrides this value_.
-//
+
+// Define Express Web Server with bodyparser middleware
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// Hello world get command
 app.get('/', (req, res) => {
   Room.getDeviceStatus('PSTX Conference Room')
   .then( (timeString) => {
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
   });
 });
 
+// Define route for webhook integration into particle cloud
 app.post('/particle', (req, res) => {
   res.status(200).end();
   console.log('Received Particle Update For: ' + req.body.coreid);
@@ -36,6 +38,7 @@ app.post('/particle', (req, res) => {
   });
 });
 
+// Define route for webhook integration into api.ai
 app.post('/apiai', (req, res) => {
     console.log('POST webhook');
     console.log(req.body.result);
@@ -59,6 +62,7 @@ app.post('/apiai', (req, res) => {
     });
 });
 
+// Start Express web server
 app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
   console.log("Particle Collector Bot Running on Port 3000");
 });
