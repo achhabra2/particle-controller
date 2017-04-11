@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var Room = require('./roomController');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://docker.chhab.rocks:32768');
+mongoose.connect(process.env.mongo);
 
 //
 // ## SimpleServer `SimpleServer(obj)`
