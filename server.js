@@ -19,9 +19,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Hello world get command
 app.get('/', (req, res) => {
-  Room.getDeviceStatus('PSTX Conference Room')
-  .then( (timeString) => {
-    res.status(200).send(timeString);
+  Room.handleApiaiReq({ action: 'getAvailableRoom'})
+  .then( (response) => {
+    res.status(200).send(response);
   });
 });
 
