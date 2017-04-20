@@ -91,7 +91,9 @@ var getDeviceStatus = ( location ) => {
       .then( (room) =>{
         var difference = compareTime(room.lastSeen);
         
-        var timeString = "It has been: " + difference.hours + "Hr  " + difference.minutes + "Min  " + difference.seconds + "Sec, since someone was last seen in the *" + location + "*. ";
+        var timeString = "It has been: **" + difference.hours + "**_Hr_  **";
+        timeString += difference.minutes + "**_Min_  **" + difference.seconds; 
+        timeString += "**_Sec_, since someone was last seen in **" + location + "**. ";
         resolve(timeString);
         console.log(timeString);
       })
@@ -116,12 +118,12 @@ var getAvailableRoom = ( ) => {
             if(availableRooms.length > 0) {
               availableRooms.forEach( room => {
                 if(!displayList)
-                  displayList = 'The following rooms have been vacant for longer than 5 minutes: ';
-                displayList += '`' + room.location + '` ';
+                  displayList = 'The following rooms have been vacant for longer than 5 minutes:<br>';
+                displayList += '* ' + room.location + '<br>';
               });
             }
             else {
-              displayList = 'Sorry *all* rooms are occupied at this time. ';
+              displayList = 'Sorry ``all`` rooms are occupied at this time. ';
             }
           resolve(displayList);
         })
