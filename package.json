@@ -1,10 +1,10 @@
 {
-  "name": "chat-example",
-  "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "name": "particle-controller",
+  "version": "1.0.1",
+  "description": "Cisco Spark Bot Showcasing IOT Sensors, APIAI and Particle.io",
   "main": "server.js",
-  "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "repository": "https://github.com/achhabra2/particle-controller",
+  "author": "Aman Chhabra <aman.chhabra1@gmail.com>",
   "dependencies": {
     "apiai": "^4.0.2",
     "assert": "^1.4.1",

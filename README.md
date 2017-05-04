@@ -1,22 +1,10 @@
+## GetARoom Cisco Spark Bot
+#### Written by Aman Chhabra
+---
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+This Bot was created to showcase:
+1. Cisco Spark
+2. Internet of Things (IOT) Sensors
+3. Programmability and APIs
 
-
-Welcome to your Node.js project on Cloud9 IDE!
-
-This chat example showcases how to use `socket.io` with a static `express` server.
-
-## Running the server
-
-1) Open `server.js` and start the app by clicking on the "Run" button in the top menu.
-
-2) Alternatively you can launch the app from the Terminal:
-
-    $ node server.js
-
-Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+It receives events from the IOT sensors connected to the Particle.io cloud and logs them in a MongoDB instance. A Spark Bot is connected to api.ai for natural language processing and receives incoming requests. Using webhook fulfillment the requests are processed and the Bot is able to output the time data. 
