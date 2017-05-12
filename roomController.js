@@ -173,7 +173,7 @@ var getBusyRoom = () => {
                             displayList = 'The following rooms have seen activity in the last 5 minutes: <ol>';
                         displayList += '<li>' + room.location + '</li>';
                     } );
-                    displaylist += '</ol>';
+                    displayList += '</ol>';
                 } else {
                     displayList = 'All rooms are currently free.';
                 }
