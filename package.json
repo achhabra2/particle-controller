@@ -11,6 +11,7 @@
     "async": "^0.2.10",
     "body-parser": "^1.17.1",
     "botkit": "^0.5.2",
+    "ciscospark": "^0.7.93",
     "console-stamp": "^0.2.5",
     "express": "~3.2.4",
     "mongoose": "^4.9.4",
@@ -20,5 +21,8 @@
     "request": "^2.81.0",
     "socket.io": "~0.9.14",
     "uuid": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
