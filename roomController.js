@@ -92,7 +92,7 @@ var getDeviceStatus = ( location ) => {
                     timeString += difference.days + "**_D_  **";
                 if ( difference.hours > 0 )
                     timeString += difference.hours + "**_Hr_  **";
-                if ( difference.hours > 0 )
+                if ( difference.minutes > 0 )
                     timeString += difference.minutes + "**_Min_  **";
                 if ( difference.seconds > 0 )
                     timeString += difference.seconds;
