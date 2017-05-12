@@ -93,18 +93,18 @@ app.post( '/particle', ( req, res ) => {
 
 // Define route for webhook integration into api.ai
 app.post( '/apiai', ( req, res ) => {
-    console.log( 'POST webhook' );
-    console.log( req.body.result );
+    console.log( 'Received APIAI Request' );
+    // console.log( req.body.result );
     Room.handleApiaiReq( req.body.result )
         .then( ( response ) => {
-            console.log( 'Sending response to api.ai: ' );
+            console.log( 'Sending response to api.ai' );
             var source = 'ParticleBot';
             var result = {
                 speech: response,
                 displayText: response,
                 source: source
             };
-            console.log( result );
+            // console.log( result );
             res.send( result ).end();
         } )
         .catch( ( err ) => {

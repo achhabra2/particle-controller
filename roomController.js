@@ -115,9 +115,12 @@ var getAvailableRoom = () => {
             .then( ( rooms ) => {
                 rooms.forEach( room => {
                     var diff = compareTime( room.lastSeen );
+                    // console.log( diff );
                     if ( diff.minutes >= 5 )
                         availableRooms.push( room );
                 } );
+                // console.log( 'Logging AvailableRooms: ' );
+                // console.log( availableRooms );
                 if ( availableRooms.length > 0 ) {
                     availableRooms.forEach( room => {
                         if ( !displayList )
@@ -225,11 +228,11 @@ var handleApiaiReq = ( result ) => {
         return getAvailableRoom();
     }
     if ( action == 'getBusyRoom' ) {
-        console.log( 'Getting Available Rooms: ' );
+        console.log( 'Getting Busy Rooms: ' );
         return getBusyRoom();
     }
     if ( action == 'listRoom' ) {
-        console.log( 'Getting Available Rooms: ' );
+        console.log( 'Listing All Rooms: ' );
         return listRoom();
     }
 };
