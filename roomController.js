@@ -116,7 +116,7 @@ var getAvailableRoom = () => {
                 rooms.forEach( room => {
                     var diff = compareTime( room.lastSeen );
                     // console.log( diff );
-                    if ( diff.minutes >= 5 )
+                    if ( diff.minutes >= 5 || diff.days > 0 || diff.hours > 0 )
                         availableRooms.push( room );
                 } );
                 // console.log( 'Logging AvailableRooms: ' );
@@ -167,7 +167,7 @@ var getBusyRoom = () => {
             .then( ( rooms ) => {
                 rooms.forEach( room => {
                     var diff = compareTime( room.lastSeen );
-                    if ( diff.minutes < 5 )
+                    if ( diff.minutes < 5 && diff.days == 0 && diff.hours == 0 )
                         availableRooms.push( room );
                 } );
                 if ( availableRooms.length > 0 ) {
